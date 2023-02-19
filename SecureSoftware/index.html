@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.3.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<body>
+    <div id="input">
+        <h1>Enter your zip code</h1>
+        <input type="text" onfocus="this.value = ''" id="zip">
+        <button onclick="submit()">Submit</button>
+    </div>
+    <br>
+    <div id="weatherDisplay">
+    <h1>Weather Today</h1>
+        <div class="temp" id="location"></div>
+        <div class="temp" id="temp"></div>
+        <div class="temp" id="condition"></div>
+    <h1>Forecast</h1>
+    <div id="fDay" class="forecast">
+        <h2>Tomorrow</h2>
+        <h3 id="fDayTemp"></h3>
+        <h3 id="fDayCond"></h3>
+        <img id="fDayIco">
+    </div>
+    <div id="sDay" class="forecast">
+        <h2>Day After Tomorrow</h2>
+        <h3 id="sDayTemp"></h3>
+        <h3 id="sDayCond"></h3>
+        <img id="sDayIco">
+    </div>
+    <div id="thrDay" class="forecast">
+        <h2>The Day After That</h2>
+        <h3 id="thrDayTemp"></h3>
+        <h3 id="thrDayCond"></h3>
+        <img id="thrDayIco">
+    </div>
+    </div>
+
+
+    <div class="overlay" id="overlay" onclick="document.getElementById('overlay').style.display = 'none'">
+         <div class="errorModal">
+            <button onclick="closeModal()" style="float: right">Close</button>
+            <br>
+            <h1 id="errorMessage"></h1>
+         </div>
+    </div>
+
+    <script src="weatherHelper.js"></script>
+</body>
+</html>
